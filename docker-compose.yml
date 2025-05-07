@@ -1,0 +1,13 @@
+services:
+  prometheus-8311:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      target: dev
+    env_file:
+      - 8311.env
+    ports:
+      - 9100:9100/tcp
+    volumes:
+      - ./src:/go
+
